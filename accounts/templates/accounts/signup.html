@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%load django_bootstrap5%}
+
+{%block content%}
+<div class="container">
+    <h1 class="text-center">Sign Up</h1>
+    <form method="post" style="padding-top: 20px;margin: auto;" class="col-lg-8 col-md-8 col-sm-8">
+        {%csrf_token%}
+        {%bootstrap_form form%}
+        <input type="submit" style="width: 100%;" value="Sign Up" class="btn btn-primary">
+    </form>
+</div>
+{%endblock%}

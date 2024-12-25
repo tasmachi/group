@@ -1,0 +1,39 @@
+{%extends 'groups/group_base.html'%}
+{%block pregroup%}
+<div class="col-md-4">
+    <div class="content">
+        {%if user.is_authenticated%}
+        <h2>Welcome back! <a href="{%url 'posts:for-user' user.username%}">@{{user.username}}</a></h2>
+        {%endif%}
+        <h2>Groups</h2>
+        <p>Welcome to the groups page!</p>
+    </div>
+    {%if user.is_authenticate%}
+    <a href="{%url 'groups:create'%}" class="btn btn-outline-secondary">Create Group</a>
+    {%endif%}
+</div>
+{%endblock%}
+{%block group_content%}
+<div class="col-md-8">
+    <div class="list-group">
+        {%for group in object_list%}
+        <a class="list-group-item" style="text-decoration: none;" href="{%url 'groups:single' group.slug%}">
+            <h3 class="title list-group-item-heading">{{group.name}}</h3>
+            <div class="list-group-item-text container-fluid">
+                {{group.description_html|safe}}
+                <div class="row">
+                    <div class="col-md-4">
+                        <span class="badge">{{group.group_memberships.count}}</span>
+                        members{{group.group_memberships.user.count}}
+                    </div>
+                    <div class="col-md-4">
+                        <span class="badge">{{group.posts.count}}</span>
+                        posts {{group.posts.count}}
+                    </div>
+                </div>
+            </div>
+        </a>
+        {%endfor%}
+    </div>
+</div>
+{%endblock%}

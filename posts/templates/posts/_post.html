@@ -1,0 +1,15 @@
+<div class="post media">
+    <h3>{{post.message_html|safe}}</h3>
+    <div class="media-body">
+        <strong>{{post.user.username}}</strong>
+        <h5 class="media-heading">
+            <span class="username">
+                <a href="{%url 'posts:for-user' post.user.username%}"></a>
+            </span>
+            <time class="time">
+                <a href="{%url 'post:single' post.user.username post.pk%}">
+                </a>
+            </time>
+        </h5>
+    </div>
+</div>

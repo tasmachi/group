@@ -1,0 +1,49 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+__pycache__/
+db.sqlite3
+media/
+staticfiles/
+
+# Virtual Environment
+venv/
+.env/
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Mac OS X
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Distribution / packaging
+*.egg
+*.egg-info
+dist/
+build/
+.eggs/
+.installed.cfg
+lib/
+lib64/
+share/python-wheels/
+
+# Test / coverage reports
+.coverage
+*.cover
+nosetests.xml
+coverage.xml
+*.log
+
+# Django settings
+local_settings.py
